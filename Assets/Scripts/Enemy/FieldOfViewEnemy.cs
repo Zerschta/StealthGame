@@ -72,7 +72,6 @@ public class FieldOfViewEnemy : MonoBehaviour
                     ray.origin + ray.direction * maxDistance;
             }
         }
-
         return playerDetected;
     }
 

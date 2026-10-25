@@ -50,7 +50,7 @@ public class BulletMovement : MonoBehaviour
 
             Enemy = collision.collider.gameObject;
             Found = Enemy.GetComponent<Enemy_Movement>();
-            Found.FoundPlayer = true;
+            Found.EnemyGotDamage = true;
         }
     }
 }

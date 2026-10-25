@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 public class Enemy_Movement : MonoBehaviour
 {
     public float speed = 2f;
+    public float runningSpeed = 3;
     public float minTime = 1f;   
     public float maxTime = 3f;
 
@@ -17,8 +18,8 @@ public class Enemy_Movement : MonoBehaviour
     private float timer = 0f;
     private float closedcooldown;
 
-    private bool FOVAreaFree = true;
     public bool FoundPlayer = false;
+    public bool EnemyGotDamage  = false;
     public float maxDistance = 5f;
 
     float range = 5f;
@@ -38,29 +39,46 @@ public class Enemy_Movement : MonoBehaviour
     {
         FoundPlayer = FieldOfView.CheckRays();
 
+        if (EnemyGotDamage == true)
+        {
+            FoundPlayer = EnemyGotDamage;
+
+            if (player.transform.gameObject.activeSelf == false)
+            {
+                EnemyGotDamage = false;
+            }
+        }
+
         timer -= Time.deltaTime;
 
         RayCast();
         if (FoundPlayer)
         {
             FollowPlayer();
+            speed = runningSpeed;
             return;
         }
+        else speed = speed;
 
         if (timer <= 0f)
         {
             closedcooldown -= Time.deltaTime;
-            if (closedcooldown <= 0f) {
+            if (closedcooldown <= 0f)
+            {
                 NewDirection();
                 closedcooldown = cooldown;
             }
         }
-        else if (timer > 0f && FOVAreaFree)
+        else if (timer > 0f)
         {
             transform.position += transform.up * speed * Time.deltaTime;
         }
         transform.rotation = Quaternion.Lerp(transform.rotation,targetRotation , Time.deltaTime * rotationspeed);
+
+        
     }
+
+
 
     void FollowPlayer()
     {

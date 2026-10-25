@@ -18,7 +18,7 @@ MonoBehaviour:
   count: 1
   cooldown: 0.2
   bulletSpeed: 20
-  range: 70
+  range: 15
   Magazine: 1000000
   shootSound: {fileID: 0}
   projectilePrefab: {fileID: 8084173667019990630, guid: 995272640f7fed14d8f01fb33931d5d7, type: 3}

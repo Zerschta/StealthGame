@@ -3118,6 +3118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealCapsule
       objectReference: {fileID: 0}
+    - target: {fileID: 4083909093682357633, guid: eabb5fa140f946c48b4b916bc722ec2e, type: 3}
+      propertyPath: Heal
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5659331286621772018, guid: eabb5fa140f946c48b4b916bc722ec2e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2

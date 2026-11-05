@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32b69adb44a27644a140127a2e1a9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  Data: {fileID: 11400000, guid: bd675d87e7d41b24a89195bb8b69e0d9, type: 2}
+  Data: {fileID: 0}
   GunRot: {fileID: 0}
   GunHold: {fileID: 0}
   BulletSpawner: {fileID: 4732255569774798183}
